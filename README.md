@@ -76,5 +76,9 @@ public Comparator<T> {
       int compare(T o1, T o2);
 }
 ```
-
-
+Always check method paramtere
+---------
+1. Always check method paramter, document what happen if when method get invalid parametr.
+2. If not checked replace with it good document about it.
+3. If not document or not checked  it is very hard do determine to detect cause.
+4. Sometime need to debug code to find cause.
