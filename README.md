@@ -83,7 +83,7 @@ Always check method parameter
 3. If not document or not checked  it is very hard do determine to detect cause.
 4. Sometime need to debug code to find cause.
 
-Make Definesive copy whenever neede
+Make Definesive copy whenever needed
 ---------
 1. When not sure about client of code may change state of mutable state, consider to make defensive copy.
 2. Try not to consider clone methode while making defensive copy, it has its own side effect.
