@@ -129,7 +129,7 @@ Method Design
       3. Telescopic pattern (Least preferd)
 6. **For parameter type favor intefaces over classes**. By doing this you are forced to client to pass specific implemetation.
 7. It helps to client to avoid type conversion, if data is in differ format.
-8. **Perfer Enum type to boolean Parameter**. It make you code more readable and writable if IDE support autocompletion for enum.
+8. **Prefer Enum type to boolean Parameter**. It make you code more readable and writable if IDE support autocompletion for enum.
 9. Also it helps add more Option for future need.
 10. Following example shows Thermometer static factory which takes its scale using boolean and Using enum
 ```java
