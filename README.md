@@ -117,5 +117,30 @@ public void setDOB(Date dob) {
 }
 ```
 
+Method Design
+---------
+1. **Choose method name carefully**, which must follow you package naming convention.
+2. Primary goal is to make it readable, understandable, easy to guesse about methods funtionality.
+3. **Avoid long list parameters**. Avoid long list method parameter, it is verey hard to remember once list is long.
+4. Long list make programmer force to see documention, even it is very hard when metod paramter has same type.
+5. Ways to avoid long parametr are 
+      1. Builder Pattern (While Conctructing Factory methods)
+      2. Holder Static class
+      3. Telescopic pattern (Least preferd)
+6. **For parameter type favor intefaces over classes**. By doing this you are forced to client to pass specific implemetation.
+7. It helps to client to avoid type conversion, if data is in differ format.
+8. **Perfer Enum type to boolean Parameter**. It make you code more readable and writable if IDE support autocompletion for enum.
+9. Also it helps add more Option for future need.
+10. Following example shows Thermometer static factory which takes its scale using boolean and Using enum
+```java
+// Thermometer with two scale isFarenheit (true), CELSIUS(false)
+Thremometer.newInstance(true);
 
+//With Enum
+enum ThermometerScale {
+ FARENHEIT, CELSIUS
+}
 
+//More Readable, and add more option scale if required
+Thremometer.newIntance(ThermometerScale.FARENHEIT);
+```
