@@ -127,3 +127,35 @@ enum ThermometerScale {
 //More Readable, and add more option scale if required
 Thremometer.newIntance(ThermometerScale.FARENHEIT);
 ```
+
+Use overloadign judiciously 
+---------
+1. Overloading is determined at **compile time**
+2. So whatever type know at compile time is considered for method invocation 
+3. When write API if make sure it is not confusing for radical diffrence type paramter, we can't guess which should get call
+4. Better choice for overloading is to use properNamed method instead of overload.
+5. Thumb rule is **Never overload a method with same numbers of parameter**.
+6. Following Example shows confusing code
+
+```java
+public void print(Set<String> c) {
+    System.out.println("Set");
+}
+
+public void print(List<String> c) {
+    System.out.println("List");
+}
+
+public void print(Collection c) {
+      System.out.println("Unknown Collection");
+}
+
+public static void main(String[] args) {
+      Collection[] collections = {new HashSet(), new ArrayList()}
+      for(Collection c : collections) {
+            print(c); // Always print "Unknown Collection",  compile time know type is Collection
+      }
+}
+```
+
+
