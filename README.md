@@ -128,7 +128,7 @@ enum ThermometerScale {
 Thremometer.newIntance(ThermometerScale.FARENHEIT);
 ```
 
-Use overloadign judiciously 
+Use overloading judiciously 
 ---------
 1. Overloading is determined at **compile time**
 2. So whatever type know at compile time is considered for method invocation 
@@ -170,4 +170,19 @@ Use overloadign judiciously
                   //i is boxed to Interger an overloaded method remove(E) is called instead remove(index)
             }
       ```
-
+Use varargs judiciously 
+---------
+1. Java 1.4 added varargs.
+2. Use varags when input length is unknown to method.
+3. Using varargs we cant force user to pass at least require data, don't use varags in this condition.
+4. Consider following examples , shows good and bad code.
+      ```java
+            public Map<String,String> getPersonAttribute(String... args) {
+                  String id = args[0]; //Must required
+                  ......
+            }
+            //Instead use following way
+            public Map<String,String> getPersonAttribute(String personId, String... args) {
+                  ......
+            }
+      ```
