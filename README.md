@@ -132,30 +132,42 @@ Use overloadign judiciously
 ---------
 1. Overloading is determined at **compile time**
 2. So whatever type know at compile time is considered for method invocation 
-3. When write API if make sure it is not confusing for radical diffrence type paramter, we can't guess which should get call
+3. When writing API make sure it is not confusing for radical diffrence type paramter, we can't guess which should get call
 4. Better choice for overloading is to use properNamed method instead of overload.
-5. Thumb rule is **Never overload a method with same numbers of parameter**.
+5. Thumb rule is **Never overload a method with same numbers of parameter(Radically same)**.
 6. Following Example shows confusing code
 
-```java
-public void print(Set<String> c) {
-    System.out.println("Set");
-}
-
-public void print(List<String> c) {
-    System.out.println("List");
-}
-
-public void print(Collection c) {
-      System.out.println("Unknown Collection");
-}
-
-public static void main(String[] args) {
-      Collection[] collections = {new HashSet(), new ArrayList()}
-      for(Collection c : collections) {
-            print(c); // Always print "Unknown Collection",  compile time know type is Collection
+      ```java
+      public void print(Set<String> c) {
+          System.out.println("Set");
       }
-}
-```
 
+      public void print(List<String> c) {
+          System.out.println("List");
+      }
+
+      public void print(Collection c) {
+            System.out.println("Unknown Collection");
+      }
+
+      public static void main(String[] args) {
+            Collection[] collections = {new HashSet(), new ArrayList()}
+            for(Collection c : collections) {
+                  print(c); // Always print "Unknown Collection",  compile time know type is Collection
+            }
+      }
+      ```
+7. Alaways take care while calling overload method which may involved autoboxing.
+8. Following example shows autoboxing issue
+      ```java
+            List<Integer> lsInterger = new ArrayList();
+            for(int i =-2; i<3;i++) {
+                  lsInterger.add(i);
+            }
+            for(int i=0; i<2;i++) {
+            
+                  lsInteger.remove(i);//It removes  o 1 2 instead of -2 -1 0 
+                  //i is boxed to Interger an overloaded method remove(E) is called instead remove(index)
+            }
+      ```
 
