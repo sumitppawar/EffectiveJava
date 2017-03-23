@@ -217,9 +217,22 @@ Write doc comments for all exposed API elements
 7. Finally add thread safety of class and method.
 8. How to write document for method
       1. To define methods contract fully, method should use 
-      2. @param  for parameter.
-      3. @return for return value.
-      4. @throws if methods thorws any Exception.
+      2. @param  for parameter, should not terminate with period
+      3. @return for return value, should not terminate with period
+      4. @throws if methods thorws any Exception, should not terminate with period
       5. {@code} to write code, instead use HTML code tag.
       6. {@inheritDoc} to inherit doc from class or interface.
       7. {@literal} to avoid processing of HTML element (<, > brackets)
+      8. First line should explain what method does and end with period.
+      9. Following first line with end period ,write detail paragraph using **p** tag without end of it.
+      10. @return and @param tag shoud have noun after them
+            ```java
+            ```
+      
+9. No two class constructor or interface method with same number of parameter have same first description line.
+10. When documenting Enum make sure, to document each constant.
+      ```java
+      ```
+11. When using generic for method or class , make sure you documnent all type.
+      ```java
+      ```
