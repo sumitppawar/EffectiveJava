@@ -205,10 +205,20 @@ Return Empty Array or Collection instead of null
 1. Always return Empty array or collection instead of null,it will avoid client code to take care of null return.
 2. If developer forgot to handle such case, it may cause NullPointerException Or developer has to check document about method returns.
 3. For collection use ```java Collections.emptyList()``` ,like collection methods.
-4. Best way to conversion between Array and Collection
-```java
-```
+
 Write doc comments for all exposed API elements
 ---------
-
-
+1. If API is usable, always document it using java doc commects (```java /** Doc comment*/).
+2. Write doc comment for every exported **class, method, constructor, field**.
+3. If class is serializable, we should also document its serializable form.
+4. The doc comment for a method should describe the contract between method and its client.
+5. Doc should says what method does rather than how it does.
+6. Doc of method should specify percondition , postcondition and side effect.
+7. Finally add thread safety of class and method.
+8. ** How to write document for method ***
+      1. To define methods contract fully, method should use ```java @param ``` for parameter.
+      2. ```java {@return}``` for return value.
+      3. ```java {@throws}``` if methods thorws any Exception
+      4. ```java {@code}``` to write code, instead use HTML **<code>**
+      5. ```java {@inheritDoc}``` to inherit doc from class or interface.
+      6. ```java {@literal}``` to avoid processing of html
