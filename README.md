@@ -216,9 +216,10 @@ Write doc comments for all exposed API elements
 6. Doc of method should specify percondition , postcondition and side effect.
 7. Finally add thread safety of class and method.
 8. ** How to write document for method ***
-      1. To define methods contract fully, method should use ```java @param ``` for parameter.
-      2. ```java {@return}``` for return value.
-      3. ```java {@throws}``` if methods thorws any Exception
-      4. ```java {@code}``` to write code, instead use HTML **<code>**
-      5. ```java {@inheritDoc}``` to inherit doc from class or interface.
-      6. ```java {@literal}``` to avoid processing of html
+      1. To define methods contract fully, method should use 
+      2. ```@param ``` for parameter.
+      3. ```{@return}``` for return value.
+      4. ```{@throws}``` if methods thorws any Exception.
+      5. ```{@code}``` to write code, instead use HTML **<code>**.
+      6. ```{@inheritDoc}``` to inherit doc from class or interface.
+      7. ```{@literal}``` to avoid processing of html.
