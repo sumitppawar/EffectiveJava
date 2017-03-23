@@ -115,28 +115,27 @@ Method Design
 8. **Prefer Enum type to boolean Parameter**. It make you code more readable and writable if IDE support autocompletion for enum.
 9. Also it helps add more Option for future need.
 10. Following example shows Thermometer static factory which takes its scale using boolean and Using enum
-```java
-// Thermometer with two scale isFarenheit (true), CELSIUS(false)
-Thremometer.newInstance(true);
+      ```java
+      // Thermometer with two scale isFarenheit (true), CELSIUS(false)
+      Thremometer.newInstance(true);
 
-//With Enum
-enum ThermometerScale {
- FARENHEIT, CELSIUS
-}
+      //With Enum
+      enum ThermometerScale {
+       FARENHEIT, CELSIUS
+      }
 
-//More Readable, and add more option scale if required
-Thremometer.newIntance(ThermometerScale.FARENHEIT);
-```
+      //More Readable, and add more option scale if required
+      Thremometer.newIntance(ThermometerScale.FARENHEIT);
+      ```
 
 Use overloading judiciously 
 ---------
-1. Overloading is determined at **compile time**
-2. So whatever type know at compile time is considered for method invocation 
-3. When writing API make sure it is not confusing for radical diffrence type paramter, we can't guess which should get call
+1. Overloading is determined at **compile time**.
+2. So whatever type know at compile time is considered for method invocation .
+3. When writing API make sure it is not confusing for radical diffrence type paramter, we can't guess which should get call.
 4. Better choice for overloading is to use properNamed method instead of overload.
 5. Thumb rule is **Never overload a method with same numbers of parameter(Radically same)**.
 6. Following Example shows confusing code
-
       ```java
       public void print(Set<String> c) {
           System.out.println("Set");
@@ -209,7 +208,7 @@ Return Empty Array or Collection instead of null
 4. Best way to conversion between Array and Collection
 ```java
 ```
-Write doc commects for all exposed API elements
+Write doc comments for all exposed API elements
 ---------
 
 
