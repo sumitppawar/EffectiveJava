@@ -189,15 +189,20 @@ Use varargs judiciously
 5. There is cost for creation of array for each varargs even you are passing one argument.
 6. If it sure and require minimum paramter, don't pass it using varagrs.
 7. Example shows a correct way to handle above sentence
-```java
-//Not Best way
-public void method(String... args) {
-      String req_1 = args[0];
-      String req_2 = args[0];
-      //Don with remainign if provided
-}
-//Best way, if not given any varargs argument , we avoide cost of creation of array
-public void method(String req_1, String req_2, String... args) {
-}
-```
-
+      ```java
+      //Not Best way
+      public void method(String... args) {
+            String req_1 = args[0];
+            String req_2 = args[0];
+            //Don with remainign if provided
+      }
+      //Best way, if not given any varargs argument , we avoide cost of creation of array
+      public void method(String req_1, String req_2, String... args) {
+      }
+      ```
+      
+Return Empty Array or Collection instead of null
+---------
+1. Always return Empty array or collection instead of null,it will avoid client code to take care of null return.
+2. If developer forgot to handle such case, it may cause NullPointerException Or developer has to check document about method returns.
+3. For collection use ```java Collections.emptyList()``` ,like collection methods.
