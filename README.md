@@ -227,12 +227,31 @@ Write doc comments for all exposed API elements
       9. Following first line with end period ,write detail paragraph using **p** tag without end of it.
       10. @return and @param tag shoud have noun after them
             ```java
+                  /**
+                   * Return element at spefied index from list.
+                   * <p>This method in <i>not</i> guarantee to run in constant time, in some implementation it may propotional
+                   * size of list.
+                   *
+                   *
+                   * @param index index of element to return; must be positive number 
+                   * And should be in list range
+                   * @return the element at specified index from this list
+                   * @throws IndexOutOfBoundsExceptions if specified index is not in range of list.
+                  */
+                  E get(int index);
             ```
       
 9. No two class constructor or interface method with same number of parameter have same first description line.
 10. When documenting Enum make sure, to document each constant.
       ```java
+            /**
+            * Colors of TV
+            */
+            public Enum TvColor {
+                  /*** Indicate green color of TV */
+                  GREEN ,
+                  /*** Indicate blue color of TV */
+                  BLUE;
+            }
       ```
-11. When using generic for method or class , make sure you documnent all type.
-      ```java
-      ```
+11. When using generic for method or class , make sure you document all type.
