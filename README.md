@@ -220,6 +220,6 @@ Write doc comments for all exposed API elements
       2. @param  for parameter.
       3. @return for return value.
       4. @throws if methods thorws any Exception.
-      5. {@code} to write code, instead use HTML **<code>**.
+      5. {@code} to write code, instead use HTML code tag.
       6. {@inheritDoc} to inherit doc from class or interface.
-      7. {@literal} to avoid processing of html.
+      7. {@literal} to avoid processing of HTML element (<, > brackets)
