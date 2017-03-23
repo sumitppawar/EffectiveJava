@@ -206,3 +206,10 @@ Return Empty Array or Collection instead of null
 1. Always return Empty array or collection instead of null,it will avoid client code to take care of null return.
 2. If developer forgot to handle such case, it may cause NullPointerException Or developer has to check document about method returns.
 3. For collection use ```java Collections.emptyList()``` ,like collection methods.
+4. Best way to conversion between Array and Collection
+```java
+```
+Write doc commects for all exposed API elements
+---------
+
+
